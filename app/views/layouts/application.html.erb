@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GoImprove</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-med-12">
+            <nav class="navbar navbar-dark bg-inverse">
+                <a class="navbar-brand" href="#">Improve at Go!</a>
+                <ul class="nav navbar-nav ">
+                    <div class="pull-xs-right">
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Notifications</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Mat 10k</a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <%= yield %>
+    </div>
+</div>
+
+</body>
+</html>
