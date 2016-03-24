@@ -56,14 +56,16 @@ For now, raise an issue and I'll do my best to respond. Thanks!
 
 ## Running the application
 
-The app requires ruby 2.3.0 and the bundler gem.
+To run the app you will need to install ruby 2.3.0. I recommend using [rbenv](https://github.com/rbenv/rbenv#installation).
 
-I recommend installing ruby through [rbenv](https://github.com/rbenv/rbenv#installation).
+On a mac or linux, you can then run the following steps in a terminal:
 
-1. Install bundler with `gem install bundler`
-2. Install dependencies with `bundle install`
-3. Run the rails server with `./bin/rails s`
-4. Open http://localhost:3000/ in your browser
+1. Checkout the project with `git checkout git@github.com:MatMoore/go-improve.git`
+2. Install bundler with `gem install bundler`
+3. Install dependencies with `bundle install`
+4. Run the rails server with `./bin/rails s`
+
+If everything is working, you should be able to open http://localhost:3000/ in your browser.
 
 ## License
 
