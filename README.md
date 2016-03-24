@@ -65,7 +65,7 @@ On a mac or linux, you can then run the following steps in a terminal:
 3. Install dependencies with `bundle install`
 4. Run the rails server with `./bin/rails s`
 
-If everything is working, you should be able to open http://localhost:3000/ in your browser.
+If everything is working, you should be able to open <http://localhost:3000/> in your browser.
 
 ## License
 
