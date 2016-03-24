@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

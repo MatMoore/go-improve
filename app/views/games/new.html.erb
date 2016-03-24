@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-block">
+        <h1>Submit a game for review</h1>
+        <%= bootstrap_form_for :game, url: games_path do |f| %>
+            <%= f.form_group :review_for, label: { text: "Review" } do %>
+                <%= f.radio_button :review_for, :black, label: "Black" %>
+                <%= f.radio_button :review_for, :white, label: "White" %>
+                <%= f.radio_button :review_for, :either, label: "Either player" %>
+            <% end %>
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                <%= f.text_field :black_player, placeholder: "Alphago" %>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                <%= f.text_field :black_rank, placeholder: "9p" %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                <%= f.text_field :white_player, placeholder: "Lee Sedol" %>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                <%= f.text_field :white_rank, placeholder: "9p" %>
+                </div>
+            </div>
+            <%= f.text_field :sgf_url, label: "Game link", placeholder: "Placeholder for SGF import functionality" %>
+            <%= f.submit "Submit Game" %>
+        <% end %>
+    </div>
+</div>
