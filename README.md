@@ -1,4 +1,4 @@
-h1. Improve at go
+# Improve at go
 
 This is a web app for reviewing Go games, similar to the [Go teaching ladder](https://gtl.xmp.net/), which is unfortunately no longer accepting new games.
 
@@ -10,25 +10,25 @@ The most basic functionality will be:
 
 This is still a work in progress and is not deployed yet.
 
-h2. Contributing
+## Contributing
 
 If you're thinking of contributing, yay! You are awesome!
 
-h3. Here are some ways you can help out:
+### Here are some ways you can help out:
 
-h4. Create github issues for ideas, or break an existing issue down into actionable tasks
+#### Create github issues for ideas, or break an existing issue down into actionable tasks
 
 Not much is implemented yet, so creating or commenting on issues is the best way to get involved.
 
 Please tag tickets with `beginner` if you think they are documented well enough for somebody new to pick up.
 
-h4. Improve the page design
+#### Improve the page design
 
 Currently I'm using bootstrap as a way to quickly build something that looks OK. The layout is a bit wonky and there are no images :(
 
 If you can improve the design in any way, please raise a PR!
 
-h4. Code changes
+#### Code changes
 
 This project is written in Ruby on Rails.
 
@@ -42,20 +42,19 @@ When you are ready to contribute, raise a pull request with your changes.
 * It doesn't have to be complete. If it's not done, explain in the description what is left to do and how other people can help.
 * Be nice to everyone else who has volunteered their time to the project.
 
-h4. Translations
+#### Translations
 
-If you are willing to translate the UI to another language, please get in touch via github issues. There is still a lot of coding to be done before translations can be added to the app, but is still an incredibly useful way to help the project and having willing translators makes this worth doing sooner.
+If you're willing to translate the UI to another language, please get in touch via github issues. There is still a lot of coding to be done before translations can be added to the app, but is still an incredibly useful way to help the project and having willing translators makes this worth doing sooner.
 
-h4. Beta testing
+#### Beta testing
 
 Coming soon!
 
-h3. How to get in touch and ask questions
+### How to get in touch and ask questions
 
 For now, raise an issue and I'll do my best to respond. Thanks!
 
-Running the application
------------------------
+## Running the application
 
 The app requires ruby 2.3.0 and the bundler gem.
 
@@ -66,8 +65,7 @@ I recommend installing ruby through [rbenv](https://github.com/rbenv/rbenv#insta
 3. Run the rails server with `./bin/rails s`
 4. Open http://localhost:3000/ in your browser
 
-License
--------
+## License
 
 MIT License
 
