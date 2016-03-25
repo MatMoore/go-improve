@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  review_for: 1
+  black_player: MyString
+  white_player: MyString
+  sgf_contents: MyString
+  black_rank: MyString
+  white_rank: MyString
+
+two:
+  review_for: 1
+  black_player: MyString
+  white_player: MyString
+  sgf_contents: MyString
+  black_rank: MyString
+  white_rank: MyString
