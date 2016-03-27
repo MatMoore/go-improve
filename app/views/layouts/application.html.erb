@@ -9,18 +9,32 @@
 </head>
 <body>
 
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-med-12">
             <nav class="navbar navbar-dark bg-inverse">
-                <a class="navbar-brand" href="#">Improve at Go!</a>
+                <a class="navbar-brand" href="<%= root_path %>">Improve at Go!</a>
                 <ul class="nav navbar-nav ">
                     <div class="pull-xs-right">
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Notifications</a>
+                        <% if user_signed_in? %>
+                            <li class="nav-item">
+                            <%= link_to present_player(current_user), edit_user_registration_path, class: "nav-link" %>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Mat 10k</a>
+                        <%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: "DELETE" %>
+                        </li>
+                    <% else %>
+
+                            <li class="nav-item">
+                        <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+                        </li>
+                        <li class="nav-item">
+                        <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
+                        </li>
+                    <% end %>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Notifications</a>
                         </li>
                     </div>
                 </ul>
@@ -28,7 +42,17 @@
         </div>
     </div>
     <div class="row">
-        <%= yield %>
+        <% if notice.present? %>
+            <p class="alert alert-info"><%= notice %></p>
+        <% end %>
+        <% if alert.present? %>
+            <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+    </div>
+    <div class="row">
+        <div class="container top-padded">
+            <%= yield %>
+        </div>
     </div>
 </div>
 

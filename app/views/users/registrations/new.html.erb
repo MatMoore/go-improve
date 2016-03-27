@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-block">
+        <h1>Register</h1>
+        <%= bootstrap_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
+          <%= devise_error_messages! %>
+            <%= f.text_field :email, label: "E-mail address", autofocus: true %>
+            <%= f.text_field :display_name %>
+            <%= f.text_field :rank, placeholder: "e.g. 25k" %>
+            <%= f.password_field :password, autocomplete: "off"  %>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <div class="row">
+            <div class="col-md-8">
+            <%= f.range_field :review_period, label: "Time between reviews", min: 1, max: 70, step: 1, value: 7 %>
+            </div>
+            <div class="col-md-4">
+                <big class="text-muted">Wait at least <span id="review-period">7</span> days before asking to review a new game</big>
+            </div>
+        </div>
+            <%= f.submit "Register" %>
+        <% end %>
+    </div>
+</div>
+
+<%= render "devise/shared/links" %>

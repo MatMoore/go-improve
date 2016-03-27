@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-block">
+        <h1 class="card-title">Account Details</h1>
+
+        <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
+
+            <fieldset class="form-group">
+            <%= f.text_field :display_name %>
+            <%= f.text_field :rank, placeholder: "e.g. 25k" %>
+            <div class="row">
+                <div class="col-md-8">
+                <%= f.range_field :review_period, label: "Time between reviews", min: 1, max: 70, step: 1 %>
+                </div>
+                <div class="col-md-4">
+                    <big class="text-muted">Wait at least <span id="review-period"><%= resource.review_period %></span> days before asking to review a new game</big>
+                </div>
+            </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+            <%= f.email_field :email, autofocus: true %>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p class="text-muted">Please check your email to confirm your new email address: <%= resource.unconfirmed_email %></p>
+            <% end %>
+            </fieldset>
+
+            <fieldset class="form-group">
+            <%= f.password_field :password, label: "New password", autocomplete: "off", help: "(leave blank if you don't want to change it)" %>
+            <%= f.password_field :password_confirmation, label: "New password confirmation", autocomplete: "off" %>
+            </fieldset>
+
+            <%= f.password_field :current_password, label: "Enter your current password to save changes", autocomplete: "off" %>
+
+            <%= f.submit "Update" %>
+        <% end %>
+    </div>
+</div>

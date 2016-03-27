@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { registrations: "users/registrations"}
+
   root 'welcome#index'
 
   resources :games, except: [:index, :edit, :update, :destroy] do
@@ -11,6 +13,10 @@ Rails.application.routes.draw do
   end
 
   resources :reviewers, only: [:new, :create]
+
+  #devise_scope :user do
+  #  delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  #end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
