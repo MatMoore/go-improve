@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-block">
+        <h1>Register</h1>
+        <p>Already registered? <button class="btn btn-sm">Log in</button></p>
+        <%= bootstrap_form_for :reviewer, url: reviewers_path do |f| %>
+            <%= f.text_field :username, label: "Username" %>
+            <%= f.text_field :email, label: "E-mail address" %>
+            <%= f.text_field :rank, placeholder: "e.g. 25k" %>
+            <%= f.password_field :password  %>
+        <div class="row">
+            <div class="col-md-8">
+            <%= f.range_field :review_period, label: "Time between reviews", min: 1, max: 70, step: 1, value: 7 %>
+            </div>
+            <div class="col-md-4">
+                <big class="text-muted">Wait at least <span id="review-period">7</span> days before asking to review a new game</big>
+            </div>
+        </div>
+            <%= f.submit "Register" %>
+        <% end %>
+    </div>
+</div>
+
