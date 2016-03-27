@@ -1,4 +1,4 @@
-# Improve at go
+# Improve at go [![Gitter](https://badges.gitter.im/MatMoore/go-improve.svg)](https://gitter.im/MatMoore/go-improve?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 This is a web app for reviewing Go games, similar to the [Go teaching ladder](https://gtl.xmp.net/), which is unfortunately no longer accepting new games.
 
@@ -44,7 +44,7 @@ When you are ready to contribute, raise a pull request with your changes.
 
 #### Translations
 
-If you're willing to translate the UI to another language, please get in touch via github issues. There is still a lot of coding to be done before translations can be added to the app, but is still an incredibly useful way to help the project and having willing translators makes this worth doing sooner.
+If you're willing to translate the UI to another language, please let us know in the gitter channel. There is still a lot of coding to be done before translations can be added to the app, but is still an incredibly useful way to help the project and having willing translators makes this worth doing sooner.
 
 #### Beta testing
 
@@ -52,7 +52,8 @@ Coming soon!
 
 ### How to get in touch and ask questions
 
-For now, raise an issue and I'll do my best to respond. Thanks!
+* If it's related to a bug, please raise an issue at https://github.com/MatMoore/go-improve/issues/new
+* Join the chat at https://gitter.im/MatMoore/go-improve
 
 ## Running the application
 
