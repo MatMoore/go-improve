@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325113348) do
+ActiveRecord::Schema.define(version: 20160327142317) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "review_for",   null: false
@@ -23,5 +23,17 @@ ActiveRecord::Schema.define(version: 20160325113348) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "game_id"
+    t.string   "reviewer_name", null: false
+    t.string   "reviewer_rank", null: false
+    t.date     "deadline",      null: false
+    t.string   "sgf_contents"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "reviews", ["game_id"], name: "index_reviews_on_game_id"
 
 end

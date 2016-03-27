@@ -1,2 +1,20 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="card">
+    <div class="card-block">
+        <h1>Review <%= game_title(@game) %></h1>
+        <p>
+            <%= game_subtitle(@game) %>.
+        </p>
+        <%= bootstrap_form_for :review, url: game_reviews_path do |f| %>
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                <%= f.text_field :reviewer_name, label: "Your name" %>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                <%= f.text_field :reviewer_rank, label: "Your rank" %>
+                </div>
+            </div>
+            <%= f.date_field :deadline, label: "Review by date", help: "Set this to the date you think you will finish the review by.", min: Date.today, max: Date.today + 14, value: Date.today + 7 %>
+            <%= f.submit "Agree to review" %>
+        <% end %>
+    </div>
+</div>
