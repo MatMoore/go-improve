@@ -2,9 +2,13 @@
 
 This is a web app for reviewing Go games, similar to the [Go teaching ladder](https://gtl.xmp.net/), which is unfortunately no longer accepting new games.
 
-The most basic functionality will be:
+Go is a two player strategy game where players take turns to place stones on intersections of a 19x19 grid, one stone at a time. The aim is to surround the most territory on the board. You can learn to play go at <http://playgo.to/iwtg/en/>.
 
-* Players can submit a game SGF for review
+The basic idea of this app is to facilitate game reviews so amateur players can help each other get better at go.
+
+The core functionality will be:
+
+* Players can submit a game record for review by uploading an SGF file
 * Players can submit reviews for games
 * The app pings suitable reviewers when a game is uploaded to ensure a speedy review
 
@@ -57,7 +61,7 @@ Coming soon!
 
 ## Running the application
 
-To run the app you will need to install ruby 2.3.0. I recommend using [rbenv](https://github.com/rbenv/rbenv#installation).
+To run the app you will need to install ruby 2.3.0. I reccommend using [rbenv](https://github.com/rbenv/rbenv#installation).
 
 On a mac or linux, you can then run the following steps in a terminal:
 
