@@ -4,7 +4,7 @@ This is a web app for reviewing Go games, similar to the [Go teaching ladder](ht
 
 The most basic functionality will be:
 
-* Players can submit a game for review
+* Players can submit a game SGF for review
 * Players can submit reviews for games
 * The app pings suitable reviewers when a game is uploaded to ensure a speedy review
 
@@ -52,7 +52,7 @@ Coming soon!
 
 ### How to get in touch and ask questions
 
-* If it's related to a bug, please raise an issue at https://github.com/MatMoore/go-improve/issues/new
+* If you find a bug, please raise an issue at https://github.com/MatMoore/go-improve/issues/new
 * Join the chat at https://gitter.im/MatMoore/go-improve
 
 ## Running the application
@@ -64,6 +64,7 @@ On a mac or linux, you can then run the following steps in a terminal:
 1. Checkout the project with `git checkout git@github.com:MatMoore/go-improve.git`
 2. Install bundler with `gem install bundler`
 3. Install dependencies with `bundle install`
+5. Set up the database with `./bin/rake db:setup`
 4. Run the rails server with `./bin/rails s`
 
 If everything is working, you should be able to open <http://localhost:3000/> in your browser.
