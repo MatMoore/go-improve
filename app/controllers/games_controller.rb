@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, only: [:new, :create]
 
     def new
     end
@@ -14,6 +14,8 @@ class GamesController < ApplicationController
 
     def show
         @game = Game.find(params[:id])
+        @in_progress = @game.reviews.where(sgf_contents: nil).order(created_at: :desc)
+        @completed = @game.reviews.where.not(sgf_contents: nil).order(created_at: :desc)
     end
 
 private

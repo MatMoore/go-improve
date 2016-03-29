@@ -12,8 +12,7 @@ class ReviewsController < ApplicationController
         :deadline
       )
 
-      @review = Review.new(attributes)
-      @review.save
+      @review = @game.reviews.create(attributes)
       redirect_to @game
   end
 

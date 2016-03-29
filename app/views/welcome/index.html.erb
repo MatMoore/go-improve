@@ -2,7 +2,7 @@
     <div class="card-block">
         <h4 class="card-title">Contribute</h4>
         <button class="btn btn-primary btn-large">Review a game</button>
-        <button class="btn btn-primary btn-large">Submit a game</button>
+        <%= link_to "Submit a game", new_game_path, class: "btn btn-primary btn-large", role:"button" %>
     </div>
 </div>
 <div class="card">
@@ -29,7 +29,7 @@
                         </th>
                     </thead>
                 </table>
-                <p>There are no games yet... be the first to <a href="#">submit one</a>!</p>
+                <p>There are no games yet... be the first to <%= link_to "submit one", new_game_path %>!</p>
             </div>
             <div class="tab-pane" id="my-games" role="tabpanel">
                 <table class="table">
@@ -43,7 +43,7 @@
                     </thead>
                 </table>
 
-                <button>Submit a game for review</button>
+                <%= link_to "Submit a game for review", new_game_path, class: "btn btn-secondary", role: "button" %>
             </div>
         </div>
     </div>
