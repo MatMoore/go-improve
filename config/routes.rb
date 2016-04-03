@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :games, except: [:index, :edit, :update, :destroy] do
-      resources :reviews, except: [:index, :show, :edit, :update, :destroy] do
+      resources :reviews, except: [:index, :edit, :update, :destroy] do
         member do
           get 'finalize'
           post 'complete'

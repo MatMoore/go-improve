@@ -3,6 +3,11 @@ class ReviewsController < ApplicationController
       @game = Game.find(params[:game_id])
   end
 
+  def show
+      @review = Review.where(game_id: params[:game_id]).find(params[:id])
+      @game = @review.game
+  end
+
   def create
       @game = Game.find(params[:game_id])
 

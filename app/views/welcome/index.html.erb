@@ -21,29 +21,48 @@
             <div class="tab-pane active" id="all-games" role="tabpanel">
                 <table class="table">
                     <thead>
-                        <th>
-                            <td>Black</td>
-                            <td>White</td>
-                            <td>Review Notes</td>
-                            <td>Reviews</td>
-                        </th>
+                        <tr>
+                            <th>Black</th>
+                            <th>White</th>
+                            <th>Review Notes</th>
+                            <th>Actions</th>
+                        </tr>
                     </thead>
+                    <% if @all.empty? %>
+                    <tr><td colspan="4"><p>There are no games yet... be the first to <%= link_to "submit one", new_game_path %>!</p></td></tr>
+                    <% end %>
+                        <% @all.each do |game| %>
+                            <tr>
+                                <td><%= present_black_player(game) %></td>
+                                <td><%= present_white_player(game) %></td>
+                                <td><%= game_subtitle(game) %></td>
+                                <td>
+                                    <ul>
+                                        <li><%= link_to "Game details", game_url(game) %></li>
+                                        <% game.reviews.each do |review| %>
+                                            <li><%= link_to "Review by #{review.reviewer_name}", game_review_url(game, review) %></li>
+                                        <% end %>
+                                    </ul>
+                                </td>
+                            </tr>
+                        <% end %>
                 </table>
-                <p>There are no games yet... be the first to <%= link_to "submit one", new_game_path %>!</p>
             </div>
             <div class="tab-pane" id="my-games" role="tabpanel">
                 <table class="table">
                     <thead>
-                        <th>
-                            <td>Black</td>
-                            <td>White</td>
-                            <td>Review Notes</td>
-                            <td>Reviews</td>
-                        </th>
+                        <tr>
+                            <th>Black</th>
+                            <th>White</th>
+                            <th>Review Notes</th>
+                            <th>Actions</th>
+                        </tr>
                     </thead>
+                    <tr><td colspan="4">
+                    <%= link_to "Submit a game for review", new_game_path, class: "btn btn-secondary", role: "button" %>
+                   </td></tr>
                 </table>
 
-                <%= link_to "Submit a game for review", new_game_path, class: "btn btn-secondary", role: "button" %>
             </div>
         </div>
     </div>

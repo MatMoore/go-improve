@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-block">
+        <h1><%= game_title(@game) %></h1>
+        <p>
+        Review by <%= @review.reviewer_name %><%= @review.reviewer_rank %>
+        </p>
+        <p>
+        <button class="btn btn-large btn-primary">Download game review</button>
+        </p>
+        <p><small>Created <%= @review.created_at %></small></p>
+    </div>
+</div>
+
