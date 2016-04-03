@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-block">
         <h4 class="card-title">Contribute</h4>
-        <button class="btn btn-primary btn-large">Review a game</button>
+        <%= link_to "Review a game", review_a_game_path, role: "button", class: "btn btn-primary btn-large" %>
         <%= link_to "Submit a game", new_game_path, class: "btn btn-primary btn-large", role:"button" %>
     </div>
 </div>

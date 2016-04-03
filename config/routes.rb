@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get 'review-a-game' => 'welcome#review'
+
   resources :games, except: [:index, :edit, :update, :destroy] do
       resources :reviews, except: [:index, :edit, :update, :destroy] do
         member do

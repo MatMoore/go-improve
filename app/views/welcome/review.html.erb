@@ -1,0 +1,47 @@
+<h1>Reviewing games</h1>
+<p>There are two ways to contribute reviews to the site:</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-block">
+                <h1 class="card-title">Review an existing game</h1>
+                <p>
+                Once a game has been added to the site, anyone can leave a review for it by uploading an SGF on the game page.
+                </p>
+
+                <!--
+        <h3>Double digit kyu</h3>
+        <h3>Single digit kyu</h3>
+        <h3>Dan level</h3>
+        -->
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-6">
+
+        <div class="card">
+            <div class="card-block">
+                <h1 class="card-title">Get games by email</h1>
+                <% unless user_signed_in? %>
+                <p>When you register, you can review new games as they are uploaded, and in return you can get your own games reviewed.</p>
+                <p>Every new game gets a primary reviewer assigned, so that everyone can get their game reviewed.</p>
+                <% end %>
+                <ol>
+                    <% if user_signed_in? %>
+                    <li>Set your <%= link_to "preferred time between reviews", edit_user_registration_url %></li>
+                    <% else %>
+                    <li><%= link_to "Register for an account", new_user_registration_url %></li>
+                    <% end %>
+                    <li>We'll periodically send you a new game to review</li>
+                    <li>If you want to review, follow the link in the email to confirm you are working on it</li>
+                    <li>Submit the review when you are done</li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+</div>
+
