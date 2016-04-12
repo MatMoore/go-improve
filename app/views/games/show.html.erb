@@ -12,7 +12,7 @@
         <% if @in_progress.present? || @completed.present? %>
         <ul>
         <% (@in_progress + @completed).each do |review| %>
-            <li><%= review.reviewer_name %></li>
+            <li><%= review.user.display_name %></li>
         <% end %>
         </ul>
         <% else %>

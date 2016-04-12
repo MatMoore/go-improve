@@ -6,9 +6,6 @@
         </p>
         <%= bootstrap_form_for :review, url: game_reviews_path do |f| %>
             <div class="row">
-                <div class="col-md-8 col-sm-12">
-                <%= f.text_field :reviewer_name, label: "Your name" %>
-                </div>
                 <div class="col-md-4 col-sm-12">
                 <%= f.text_field :reviewer_rank, label: "Your rank" %>
                 </div>

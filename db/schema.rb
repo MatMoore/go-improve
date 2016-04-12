@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327174815) do
+ActiveRecord::Schema.define(version: 20160412210657) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "review_for",   null: false
@@ -26,15 +26,16 @@ ActiveRecord::Schema.define(version: 20160327174815) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "game_id"
-    t.string   "reviewer_name", null: false
     t.string   "reviewer_rank", null: false
     t.date     "deadline",      null: false
     t.string   "sgf_contents"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id",       null: false
   end
 
   add_index "reviews", ["game_id"], name: "index_reviews_on_game_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "rank",                               null: false

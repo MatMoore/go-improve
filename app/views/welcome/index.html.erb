@@ -40,7 +40,7 @@
                                     <ul>
                                         <li><%= link_to "Game details", game_url(game) %></li>
                                         <% game.reviews.each do |review| %>
-                                            <li><%= link_to "Review by #{review.reviewer_name}", game_review_url(game, review) %></li>
+                                            <li><%= link_to "Review by #{review.user.display_name}", game_review_url(game, review) %></li>
                                         <% end %>
                                     </ul>
                                 </td>
