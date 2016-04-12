@@ -48,7 +48,7 @@ When you are ready to contribute, raise a pull request with your changes.
 
 #### Translations
 
-If you're willing to translate the UI to another language, please let us know in the gitter channel. There is still a lot of coding to be done before translations can be added to the app, but is still an incredibly useful way to help the project and having willing translators makes this worth doing sooner.
+If you're willing to translate the UI to another language, please let us know in the gitter channel. There is still a lot of coding to be done before translations can be added to the app, but it's still an incredibly useful way to help the project and having willing translators makes this worth doing sooner.
 
 #### Beta testing
 
