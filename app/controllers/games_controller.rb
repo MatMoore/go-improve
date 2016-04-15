@@ -7,6 +7,7 @@ class GamesController < ApplicationController
     def create
         attributes = permitted_params.to_h
         attributes[:sgf_contents] = "foo"
+        attributes[:user] = current_user
         @game = Game.new(attributes)
         @game.save
         redirect_to @game
