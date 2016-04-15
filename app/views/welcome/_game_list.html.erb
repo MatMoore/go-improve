@@ -1,0 +1,15 @@
+<% games.each do |game| %>
+    <tr>
+    <td><%= present_black_player(game) %></td>
+    <td><%= present_white_player(game) %></td>
+    <td><%= game_subtitle(game) %></td>
+    <td>
+        <ul>
+            <li><%= link_to "Game details", game_url(game) %></li>
+            <% game.reviews.each do |review| %>
+                <li><%= link_to "Review by #{review.user.display_name}", game_review_url(game, review) %></li>
+        <% end %>
+        </ul>
+    </td>
+</tr>
+<% end %>

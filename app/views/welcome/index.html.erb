@@ -31,21 +31,7 @@
                     <% if @all.empty? %>
                     <tr><td colspan="4"><p>There are no games yet... be the first to <%= link_to "submit one", new_game_path %>!</p></td></tr>
                     <% end %>
-                        <% @all.each do |game| %>
-                            <tr>
-                                <td><%= present_black_player(game) %></td>
-                                <td><%= present_white_player(game) %></td>
-                                <td><%= game_subtitle(game) %></td>
-                                <td>
-                                    <ul>
-                                        <li><%= link_to "Game details", game_url(game) %></li>
-                                        <% game.reviews.each do |review| %>
-                                            <li><%= link_to "Review by #{review.user.display_name}", game_review_url(game, review) %></li>
-                                        <% end %>
-                                    </ul>
-                                </td>
-                            </tr>
-                        <% end %>
+                    <%= render partial: "game_list", locals: {games: @all} %>
                 </table>
             </div>
             <div class="tab-pane" id="my-games" role="tabpanel">
@@ -58,6 +44,7 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
+                    <%= render partial: "game_list", locals: {games: @mine} %>
                     <tr><td colspan="4">
                     <%= link_to "Submit a game for review", new_game_path, class: "btn btn-secondary", role: "button" %>
                    </td></tr>
