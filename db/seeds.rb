@@ -7,13 +7,23 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 unless Rails.env.production?
-    user = User.where(email: "test@test.com").first_or_create! do |u|
-        u.display_name = 'Test User'
-        u.rank = "25k"
-        u.review_period = 7
-        u.email = 'test@test.com'
-        u.password = 'password'
-        u.password_confirmation = 'password'
+    seed_file = File.join(File.dirname(__FILE__), 'player_seeds.json')
+    user_attrs = JSON.parse(File.read(seed_file)).map(&:symbolize_keys)
+    user_attrs << {
+        display_name: 'Test User',
+        rank: "25k",
+        review_period: 7,
+        email: 'test@test.com',
+    }
+
+    user_attrs.each do |attrs|
+        created_user = User.find_or_create_by(
+            display_name: attrs.delete(:display_name)
+        ) do |user|
+            user.assign_attributes(attrs)
+            user.password = 'password'
+            user.password_confirmation = 'password'
+        end
+        created_user.confirm unless created_user.created_at
     end
-    user.confirm
 end

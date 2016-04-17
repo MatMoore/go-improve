@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   devise :registerable,
          :database_authenticatable, :rememberable, :trackable, :timeoutable, :validatable,
          :confirmable
+
+  # FIXME rank & review period validation
 end
