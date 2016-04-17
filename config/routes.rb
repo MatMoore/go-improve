@@ -14,12 +14,6 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :reviewers, only: [:new, :create]
-
-  #devise_scope :user do
-  #  delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  #end
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

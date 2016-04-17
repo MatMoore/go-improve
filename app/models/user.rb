@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
          :confirmable
 
   # FIXME rank & review period validation
+
+  def reviewer_rank
+      Rank.new(rank)
+  end
 end
