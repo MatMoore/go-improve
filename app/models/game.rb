@@ -13,4 +13,8 @@ class Game < ActiveRecord::Base
             [Rank.new(black_rank), Rank.new(white_rank)].min
         end
     end
+
+    def inspect
+        "Game(black_rank: #{black_rank}, white_rank:#{white_rank})"
+    end
 end

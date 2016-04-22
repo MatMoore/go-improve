@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   def reviewer_rank
       Rank.new(rank)
   end
+
+  def inspect
+      "User(display_name: #{display_name}, rank:#{rank})"
+  end
 end

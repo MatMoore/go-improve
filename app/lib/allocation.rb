@@ -21,13 +21,13 @@ module Allocation
     # This assumes the queue of games to review is smaller than the number of
     # potential reviewers...
     def self.allocate(available_reviewers, games_to_review)
-        return enum_for(:allocate) unless block_given?
+        return enum_for(:allocate, available_reviewers, games_to_review) unless block_given?
 
         available_reviewers = available_reviewers.dup
 
         games_to_review.each do |game|
             reviewer = available_reviewers.max_by {|potential| suitability(game, potential)}
-            available_reviewers.delete(reviewer)
+            available_reviewers.delete(reviewer) unless reviewer.nil?
 
             yield [game, reviewer]
         end
