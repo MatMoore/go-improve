@@ -23,7 +23,7 @@
                 <%= f.text_field :white_rank, placeholder: "9p" %>
                 </div>
             </div>
-            <%= f.text_field :sgf_url, label: "Game link", placeholder: "Placeholder for SGF import functionality" %>
+            <%= f.file_field :sgf, label: "SGF file", accept: ".sgf", class: "form-control" %>
             <%= f.submit "Submit Game" %>
         <% end %>
     </div>

@@ -1,4 +1,6 @@
 class Game < ActiveRecord::Base
+    # TODO: validate everything
+    #
     enum review_for: [:black, :white, :either]
     has_many :reviews
     belongs_to :user

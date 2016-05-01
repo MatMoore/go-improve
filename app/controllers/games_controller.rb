@@ -6,7 +6,9 @@ class GamesController < ApplicationController
 
     def create
         attributes = permitted_params.to_h
-        attributes[:sgf_contents] = "foo"
+        puts attributes.inspect
+        uploaded_io = attributes.delete("sgf")
+        attributes[:sgf_contents] = uploaded_io.read unless uploaded_io.nil?
         attributes[:user] = current_user
         @game = Game.new(attributes)
         @game.save
@@ -27,7 +29,8 @@ private
           :black_player,
           :white_player,
           :black_rank,
-          :white_rank
+          :white_rank,
+          :sgf
       )
     end
 end
