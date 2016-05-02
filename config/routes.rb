@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'review-a-game' => 'welcome#review'
 
   resources :games, except: [:index, :edit, :update, :destroy] do
+      member do
+          get 'sgf'
+      end
       resources :reviews, except: [:index, :edit, :update, :destroy] do
         member do
           get 'finalize'

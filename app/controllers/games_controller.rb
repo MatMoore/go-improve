@@ -21,4 +21,12 @@ class GamesController < ApplicationController
         @completed = @game.reviews.where.not(sgf_contents: nil).order(created_at: :desc)
     end
 
+    def sgf
+        @game = Game.find(params[:id])
+
+        send_data @game.sgf_contents,
+            filename: "game_#{@game.id}.sgf",
+            type: "application/x-go-sgf",
+            disposition: :inline
+    end
 end

@@ -4,7 +4,7 @@
         <p>
 
         <%= link_to "Agree to review", new_game_review_path(@game), class: "btn btn-primary btn-large", role: "button" %>
-        <a class="btn btn-secondary btn-large" href="#">Download game SGF</a>
+        <a class="btn btn-secondary btn-large" href="<%= sgf_game_path %>">Download game SGF</a>
         <a class="btn btn-secondary btn-large" href="#">Upload review SGF</a>
         </p>
 
