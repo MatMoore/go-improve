@@ -1,9 +1,17 @@
 class Game < ActiveRecord::Base
-    # TODO: validate everything
-    #
-    enum review_for: [:black, :white, :either]
-    has_many :reviews
+    RANK_REGEX = /\d\d?[dkp]/
+
+    validates :review_for, presence: true
+    enum       review_for: [:black, :white, :either]
+    validates :black_player, presence: true
+    validates :white_player, presence: true
+    validates :sgf_contents, presence: true
+    validates :black_rank, presence: true, format: RANK_REGEX
+    validates :white_rank, presence: true, format: RANK_REGEX
+
     belongs_to :user
+    validates  :user, presence: true
+    has_many :reviews
 
     def review_rank
         case review_for.to_sym

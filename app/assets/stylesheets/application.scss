@@ -17,3 +17,11 @@
 .top-padded {
     padding-top: 1em;
 }
+
+.has-error .form-control {
+    border-color: red;
+}
+
+.help-block {
+    color: red;
+}

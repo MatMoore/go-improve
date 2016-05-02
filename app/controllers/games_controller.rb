@@ -1,18 +1,18 @@
 class GamesController < ApplicationController
+    respond_to :html
     before_action :authenticate_user!, only: [:new, :create]
 
     def new
+        @game_form = GameForm.new
     end
 
     def create
-        attributes = permitted_params.to_h
-        puts attributes.inspect
-        uploaded_io = attributes.delete("sgf")
-        attributes[:sgf_contents] = uploaded_io.read unless uploaded_io.nil?
-        attributes[:user] = current_user
-        @game = Game.new(attributes)
-        @game.save
-        redirect_to @game
+        @game_form = GameForm.new(params[:game_form])
+        if @game_form.save(current_user)
+            redirect_to game_path(@game_form.game)
+        else
+            render :new
+        end
     end
 
     def show
@@ -21,16 +21,4 @@ class GamesController < ApplicationController
         @completed = @game.reviews.where.not(sgf_contents: nil).order(created_at: :desc)
     end
 
-private
-
-    def permitted_params
-      @article = params[:game].permit(
-          :review_for,
-          :black_player,
-          :white_player,
-          :black_rank,
-          :white_rank,
-          :sgf
-      )
-    end
 end

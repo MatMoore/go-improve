@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-block">
         <h1>Submit a game for review</h1>
-        <%= bootstrap_form_for :game, url: games_path do |f| %>
+        <%= bootstrap_form_for @game_form, url: games_path do |f| %>
             <%= f.form_group :review_for, label: { text: "Review" } do %>
                 <%= f.radio_button :review_for, :black, label: "Black" %>
                 <%= f.radio_button :review_for, :white, label: "White" %>
