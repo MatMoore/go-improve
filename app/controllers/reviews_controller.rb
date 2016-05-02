@@ -20,8 +20,14 @@ class ReviewsController < ApplicationController
       ).to_h
       attributes[:user] = current_user
 
-      @review = @game.reviews.create(attributes)
+      @review = @game.reviews.create_with(attributes).find_or_create_by(
+          user: current_user,
+          game: @game
+      )
+      @review.assign_attributes(attributes)
+
       if @review.valid?
+          @review.save
           rank = attributes["reviewer_rank"]
 
           if rank != current_user.rank
