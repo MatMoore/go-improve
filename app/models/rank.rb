@@ -1,12 +1,13 @@
 class Rank
+    REGEX = /\A\d\d?[dkp]\Z/
+
     include Comparable
     attr_reader :grade
 
     def initialize(rank_string)
         @rank_string = rank_string.downcase
 
-        # FIXME
-        raise ArgumentError unless /[kdp]$/.match(@rank_string)
+        raise ArgumentError unless REGEX.match(@rank_string)
 
         @grade = case @rank_string.last
         when 'k'

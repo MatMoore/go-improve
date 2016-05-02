@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
   def new
       @game = Game.find(params[:game_id])
+      @review = Review.new(reviewer_rank: current_user.rank)
   end
 
   def show
@@ -20,7 +21,18 @@ class ReviewsController < ApplicationController
       attributes[:user] = current_user
 
       @review = @game.reviews.create(attributes)
-      redirect_to @game
+      if @review.valid?
+          rank = attributes["reviewer_rank"]
+
+          if rank != current_user.rank
+              current_user.rank = rank
+              current_user.save!
+          end
+
+          redirect_to @game
+      else
+          render :new
+      end
   end
 
 end

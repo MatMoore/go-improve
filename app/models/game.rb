@@ -1,13 +1,11 @@
 class Game < ActiveRecord::Base
-    RANK_REGEX = /\d\d?[dkp]/
-
     validates :review_for, presence: true
     enum       review_for: [:black, :white, :either]
     validates :black_player, presence: true
     validates :white_player, presence: true
     validates :sgf_contents, presence: true
-    validates :black_rank, presence: true, format: RANK_REGEX
-    validates :white_rank, presence: true, format: RANK_REGEX
+    validates :black_rank, presence: true, format: Rank::REGEX
+    validates :white_rank, presence: true, format: Rank::REGEX
 
     belongs_to :user
     validates  :user, presence: true

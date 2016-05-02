@@ -9,7 +9,12 @@ class User < ActiveRecord::Base
          :database_authenticatable, :rememberable, :trackable, :timeoutable, :validatable,
          :confirmable
 
-  # FIXME rank & review period validation
+    validates :rank, presence: true, format: Rank::REGEX
+    validates :review_period, presence: true, numericality: {
+        only_integer: true,
+        greater_than_or_equal_to: 1,
+        less_than_or_equal_to: 90
+    }
 
   def reviewer_rank
       Rank.new(rank)
